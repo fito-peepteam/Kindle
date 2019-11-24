@@ -7,7 +7,7 @@ Topics reviewed:
 
 1. Classes and Structures
 2. For loops and if statements
-3. Optionals
+3. Optionals - Conditional biding and guard statements
 4. Navigation and TableViewController <- *I'm here*
 5. UITableView Cell Register and Dequeue
 6. Custom Cells and Book Images
