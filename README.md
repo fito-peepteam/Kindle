@@ -1,5 +1,5 @@
 # Kindle
-My take on a basic Swift tutorial going over the Kindle Interface.
+Reviewing a basic Swift tutorial before diving in with SwiftUI.
 
 --- 
 
@@ -24,3 +24,6 @@ Topics reviewed:
 17. Loading Images
 18. Custom Navigation Bar Style
 19. UITableView Custom Footer
+
+-----
+Tutorial is by Brian Voong - Lets Build that App (LBTA) goes over the Kindle interface using the Swift Language and Xcode.
