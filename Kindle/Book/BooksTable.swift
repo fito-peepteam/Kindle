@@ -39,7 +39,7 @@ class BooksTable: UITableViewController {
     
     func setupBook(withPages pages:[Page]){
         
-        let sjobsPages = [pages[0], pages[1]]
+        let sjobsPages = [pages[0], pages[1], pages[2], pages[3]]
         let gatesPages = [pages[2], pages[3]]
         
         let book1 = Book(
@@ -92,6 +92,8 @@ class BooksTable: UITableViewController {
             
             let layout = UICollectionViewFlowLayout()
             let pagesCollectionVC = BookPagerController(collectionViewLayout: layout)
+            pagesCollectionVC.pages = books[indexPath.row].pages
+            
             present(pagesCollectionVC, animated: true, completion: nil)
             
             tableView.deselectRow(at: indexPath, animated: false) // so the cell stays clear
