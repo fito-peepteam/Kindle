@@ -36,7 +36,11 @@ class BooksTable: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("View Did Load")
+        
         view.backgroundColor = .red
+        
+        
         
         setupPages()
     }
@@ -84,8 +88,22 @@ class BooksTable: UITableViewController {
 
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "testCell")
+        
+        cell.textLabel?.text = "test"
+        
+        return cell
+    }
     
-
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
 
 }
 

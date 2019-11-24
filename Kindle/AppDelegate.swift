@@ -10,19 +10,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Initializing the app window and set a different starting point for the app
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        
-        // Embedding a UITableViewController within a UINavigatorController
-        let booksTable = BooksTable()
-        window?.rootViewController = UINavigationController(rootViewController: booksTable)
-        
         return true
     }
 
