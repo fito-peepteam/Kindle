@@ -19,8 +19,8 @@ class BooksTable: UITableViewController {
         navigationItem.title = "Kindle"
         view.backgroundColor = .white
         
-        tableView.tableFooterView = UIView()
         tableView.register(BookCell.self, forCellReuseIdentifier: "bookCell")
+        tableView.tableFooterView = UIView()
         
         setupPages()
     }
@@ -62,13 +62,13 @@ class BooksTable: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "bookCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as! BookCell
         
-        cell.textLabel?.text = books?[indexPath.row].title
-        cell.detailTextLabel?.text = books?[indexPath.row].author
-        cell.imageView?.image = books?[indexPath.row].image
+        let book = books?[indexPath.row]
+        cell.book = book
         
         return cell
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

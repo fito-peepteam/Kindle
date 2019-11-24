@@ -60,12 +60,12 @@
 			children = (
 				B0A65DC8238A291B00E20431 /* AppDelegate.swift */,
 				B0A65DCA238A291B00E20431 /* SceneDelegate.swift */,
-				B0A65DCC238A291B00E20431 /* BooksTable.swift */,
 				B0D6A9B9238B11720045DD45 /* Models.swift */,
+				B088FD64238B19420046EE5F /* BookCell.swift */,
+				B0A65DCC238A291B00E20431 /* BooksTable.swift */,
 				B0A65DD1238A291B00E20431 /* Assets.xcassets */,
 				B0A65DD3238A291B00E20431 /* LaunchScreen.storyboard */,
 				B0A65DD6238A291B00E20431 /* Info.plist */,
-				B088FD64238B19420046EE5F /* BookCell.swift */,
 			);
 			path = Kindle;
 			sourceTree = "<group>";
