@@ -8,13 +8,13 @@ Topics reviewed:
 1. Classes and Structures
 2. For loops and if statements
 3. Optionals - Conditional biding and guard statements
-4. Navigation and TableViewController <- *I'm here*
+4. Navigation and TableViewController
 5. UITableView Cell Register and Dequeue
 6. Custom Cells and Book Images
 7. Adding Subviews Using Frames
 8. Auto Layout
 9. MVC and Encapsulation
-10. Presenting UICollectionViewController
+10. Presenting UICollectionViewController <- *I'm here*
 11. Transform Cells to Pages
 12. Custom Page Cells
 13. Render Book Pages
