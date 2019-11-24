@@ -43,27 +43,15 @@ class BooksTable: UITableViewController {
         let book1 = Book(
             title: "Steve Jobs",
             author: "Walter Isaacson",
+            image: UIImage(named: "SteveJobs")!, // using ! operator because I know the image is there & time constraints.
             pages: sjobsPages)
 
         let book2 = Book(title: "Bill Gates: A Biography",
                          author: "Michael Becraft",
+                         image: UIImage(named: "BillGates")!, // using ! operator because I know the image is there & time constraints.
                          pages: gatesPages)
         
         books = [book1, book2]
-                
-        // Safely unwrapping books without using the ! operator.
-        if let safeBooks = books {
-            for book in safeBooks  {
-                print("Title: \(book.title), by: \(book.author)")
-                print("Number of pages: \(pages.count)")
-                
-                for page in book.pages {
-                    print("Page #\(page.number)")
-                    print(page.text)
-                }
-                print("End of the book")
-            }
-        }
 
     }
     
@@ -77,6 +65,7 @@ class BooksTable: UITableViewController {
         
         cell.textLabel?.text = books?[indexPath.row].title
         cell.detailTextLabel?.text = books?[indexPath.row].author
+        cell.imageView?.image = books?[indexPath.row].image
         
         return cell
     }

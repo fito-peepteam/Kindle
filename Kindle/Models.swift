@@ -6,7 +6,7 @@
 //  Copyright © 2019 PEEP TECHNOLOGIES SL. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Page {
     let number: Int
@@ -21,11 +21,13 @@ class Page {
 class Book {
     let title: String
     let author: String
+    let image: UIImage
     let pages: [Page]
     
-    init(title: String, author: String, pages: [Page]) {
+    init(title: String, author: String, image: UIImage, pages: [Page]) {
         self.title = title
         self.author = author
+        self.image = image
         self.pages = pages
     }
 }
