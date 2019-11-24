@@ -19,6 +19,8 @@ class BooksTable: UITableViewController {
         navigationItem.title = "Kindle"
         view.backgroundColor = .white
         
+        tableView.tableFooterView = UIView()
+        
         setupPages()
     }
     
@@ -65,9 +67,13 @@ class BooksTable: UITableViewController {
 
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "testCell")
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "bookCell")
         
         cell.textLabel?.text = books?[indexPath.row].title
         cell.detailTextLabel?.text = books?[indexPath.row].author
@@ -84,6 +90,14 @@ class BooksTable: UITableViewController {
             return numberOfBooks
         } else {
             return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let books = books {
+            print("Selected Book: \(books[indexPath.row].title)")
+            print("Author: \(books[indexPath.row].author)")
         }
     }
 
