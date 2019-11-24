@@ -91,7 +91,7 @@ class BooksTable: UITableViewController {
             print("Author: \(books[indexPath.row].author)")
             
             let layout = UICollectionViewFlowLayout()
-            let pagesCollectionVC = PagesCollectionViewController(collectionViewLayout: layout) //(frame: screenFrame, collectionViewLayout: layout)
+            let pagesCollectionVC = BookPagerController(collectionViewLayout: layout)
             present(pagesCollectionVC, animated: true, completion: nil)
             
             tableView.deselectRow(at: indexPath, animated: false) // so the cell stays clear

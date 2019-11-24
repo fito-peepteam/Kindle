@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PagesCollectionViewController: UICollectionViewController {
+class BookPagerController: UICollectionViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        collectionView.backgroundColor = .white
+        overrideUserInterfaceStyle = .light
     }
     
     
