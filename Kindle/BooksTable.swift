@@ -20,6 +20,7 @@ class BooksTable: UITableViewController {
         view.backgroundColor = .white
         
         tableView.tableFooterView = UIView()
+        tableView.register(BookCell.self, forCellReuseIdentifier: "bookCell")
         
         setupPages()
     }
