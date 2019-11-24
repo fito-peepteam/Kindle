@@ -15,12 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // We set a different starting point for the app
-        
+        // Initializing the app window and set a different starting point for the app
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        window?.rootViewController = ViewController()
+        // Embedding a UITableViewController within a UINavigatorController
+        let booksTable = BooksTable()
+        window?.rootViewController = UINavigationController(rootViewController: booksTable)
         
         return true
     }

@@ -30,13 +30,13 @@ class Book {
     }
 }
 
-class ViewController: UIViewController {
+class BooksTable: UITableViewController {
 
     var books: [Book]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        view.backgroundColor = .red
         
         setupPages()
     }
