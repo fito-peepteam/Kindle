@@ -8,28 +8,6 @@
 
 import UIKit
 
-class Page {
-    let number: Int
-    let text: String
-    
-    init(number: Int, body: String) {
-        self.number = number
-        self.text = body
-    }
-}
-
-class Book {
-    let title: String
-    let author: String
-    let pages: [Page]
-    
-    init(title: String, author: String, pages: [Page]) {
-        self.title = title
-        self.author = author
-        self.pages = pages
-    }
-}
-
 class BooksTable: UITableViewController {
 
     var books: [Book]?
@@ -38,9 +16,8 @@ class BooksTable: UITableViewController {
         super.viewDidLoad()
         print("View Did Load")
         
-        view.backgroundColor = .red
-        
-        
+        navigationItem.title = "Kindle"
+        view.backgroundColor = .white
         
         setupPages()
     }
@@ -90,9 +67,10 @@ class BooksTable: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "testCell")
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "testCell")
         
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = books?[indexPath.row].title
+        cell.detailTextLabel?.text = books?[indexPath.row].author
         
         return cell
     }
@@ -102,7 +80,11 @@ class BooksTable: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if let numberOfBooks = books?.count {
+            return numberOfBooks
+        } else {
+            return 0
+        }
     }
 
 }
