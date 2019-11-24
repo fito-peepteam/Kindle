@@ -18,6 +18,7 @@ class BooksTable: UITableViewController {
         
         navigationItem.title = "Kindle"
         view.backgroundColor = .white
+        overrideUserInterfaceStyle = .light
         
         tableView.register(BookCell.self, forCellReuseIdentifier: "bookCell")
         tableView.tableFooterView = UIView()
@@ -88,7 +89,17 @@ class BooksTable: UITableViewController {
         if let books = books {
             print("Selected Book: \(books[indexPath.row].title)")
             print("Author: \(books[indexPath.row].author)")
+            
+            let layout = UICollectionViewFlowLayout()
+            let pagesCollectionVC = UICollectionViewController(collectionViewLayout: layout) //(frame: screenFrame, collectionViewLayout: layout)
+            present(pagesCollectionVC, animated: true, completion: nil)
+            
+            tableView.deselectRow(at: indexPath, animated: false) // so the cell stays clear
+            
         }
+        
+        
+        
     }
 
 }
