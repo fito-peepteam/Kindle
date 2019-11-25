@@ -21,13 +21,27 @@ class Page {
 class Book {
     let title: String
     let author: String
-    let image: UIImage
+    let coverImageURL: String
     let pages: [Page]
     
-    init(title: String, author: String, image: UIImage, pages: [Page]) {
-        self.title = title
-        self.author = author
-        self.image = image
-        self.pages = pages
+    init(dictionary: [String: Any]) {
+        self.title = dictionary["title"] as? String ?? ""
+        self.author = dictionary["author"] as? String ?? ""
+        self.coverImageURL = dictionary["String"] as? String ?? ""
+        
+        var bookPages = [Page]()
+        
+        if let pagesDictionary = dictionary["pages"] as? [[String: Any]] {
+            for pageDictionary in pagesDictionary {
+                if let pageText = pageDictionary["text"] as? String, let pageNumber = pageDictionary["id"] as? Int {
+                    let page = Page(number: pageNumber, body: pageText)
+                    bookPages.append(page)
+                }
+            }
+        }
+        
+        
+        
+        self.pages = bookPages
     }
 }

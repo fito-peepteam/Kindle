@@ -20,6 +20,7 @@ class PageCell: UICollectionViewCell {
     let body: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
+        label.numberOfLines = 10
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

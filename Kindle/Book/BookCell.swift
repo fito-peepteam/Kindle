@@ -12,9 +12,27 @@ class BookCell: UITableViewCell {
     
     var book: Book? {
         didSet {
-            coverImageView.image = book?.image
             titleLabel.text = book?.title
             subtitleLabel.text = book?.author
+            
+            //imageView!.image = UIImage(named: "SteveJobs")
+            
+            guard let imageUrl = book?.coverImageURL else { return }
+            guard let url = URL(string: imageUrl) else { return }
+            
+            self.coverImageView.image = nil
+            
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    return
+                }
+                guard let imageData = data else { return }
+                let image = UIImage(data: imageData)
+                
+                DispatchQueue.main.async {
+                    self.coverImageView.image = image
+                }
+            }.resume()
         }
     }
     
@@ -43,9 +61,7 @@ class BookCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        //backgroundColor = .white
-    
+            
         addSubview(coverImageView)
         coverImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
         coverImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
@@ -61,11 +77,6 @@ class BookCell: UITableViewCell {
         subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
         subtitleLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
         subtitleLabel.rightAnchor.constraint(equalTo: titleLabel.rightAnchor).isActive = true
-        
-        
-        // How to use CGRect:
-        // coverImageView.frame = CGRect(x: 8, y: 8, width: 50, height: 64)
-        
         
     }
     

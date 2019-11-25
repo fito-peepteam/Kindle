@@ -23,37 +23,43 @@ class BooksTable: UITableViewController {
         tableView.register(BookCell.self, forCellReuseIdentifier: "bookCell")
         tableView.tableFooterView = UIView()
         
-        setupPages()
+        fetchBooks()
     }
     
-    func setupPages(){
-        let page1 = Page(number: 1, body: "This is Page1")
-        let page2 = Page(number: 2, body: "This is Page2")
-        let page3 = Page(number: 3, body: "This is Page3")
-        let page4 = Page(number: 4, body: "This is Page4")
+    func fetchBooks(){
+        print("Fetching books...")
         
-        let pages = [page1, page2, page3, page4]
-        
-        setupBook(withPages: pages)
-    }
-    
-    func setupBook(withPages pages:[Page]){
-        
-        let sjobsPages = [pages[0], pages[1], pages[2], pages[3]]
-        let gatesPages = [pages[2], pages[3]]
-        
-        let book1 = Book(
-            title: "Steve Jobs",
-            author: "Walter Isaacson",
-            image: UIImage(named: "SteveJobs")!, // using ! operator because I know the image is there & time constraints.
-            pages: sjobsPages)
-
-        let book2 = Book(title: "Bill Gates: A Biography",
-                         author: "Michael Becraft",
-                         image: UIImage(named: "BillGates")!, // using ! operator because I know the image is there & time constraints.
-                         pages: gatesPages)
-        
-        books = [book1, book2]
+        if let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if error == nil {
+                    if let data = data {
+                        
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                            
+                            guard let bookDictionaries = json as? [[String: Any]] else { return }
+                            
+                            self.books = []
+                            
+                            for bookDictionary in bookDictionaries {
+                                let book = Book(dictionary: bookDictionary)
+                                self.books?.append(book)
+                            }
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                            
+                        } catch let jsonError {
+                            print("There was a JSON Error", jsonError)
+                        }
+                        
+                    }
+                }
+            }.resume()
+            
+            
+        }
 
     }
     
@@ -96,12 +102,9 @@ class BooksTable: UITableViewController {
             
             present(pagesCollectionVC, animated: true, completion: nil)
             
-            tableView.deselectRow(at: indexPath, animated: false) // so the cell stays clear
-            
+            tableView.deselectRow(at: indexPath, animated: false) // so the cell stays clear            
         }
-        
-        
-        
+
     }
 
 }
