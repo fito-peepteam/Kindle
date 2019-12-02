@@ -24,7 +24,6 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
         layout?.scrollDirection = .horizontal
         layout?.minimumLineSpacing = 0
         
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
