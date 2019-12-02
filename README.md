@@ -29,4 +29,4 @@ Topics reviewed:
 **Disclaimer: This project is based on Brian Voong's Tutorial - Lets Build that App (LBTA).** 
 His tutorial goes over the Swift language by building a Kindle lookalike app. 
 
-I dive deeper on some features I found interesting. So, if you're following his course and you expect similar results, do not use the code in this repo. **As it may vary from the tutorial**
+I dive deeper on some features I found interesting. So, if you're following his course and you intend to use this repo expecting similar results - I would suggest not to continue, **as it my code may often vary from the tutorial.**
