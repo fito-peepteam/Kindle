@@ -14,14 +14,14 @@ Topics reviewed:
 7. Adding Subviews Using Frames
 8. Auto Layout
 9. MVC and Encapsulation
-10. Presenting UICollectionViewController <- *I'm here*
+10. Presenting UICollectionViewController 
 11. Transform Cells to Pages
 12. Custom Page Cells
 13. Render Book Pages
 14. URLSession JSON Fetch
 15. JSONSerialization Books List
 16. Custom Book Constructor
-17. Loading Images
+17. Loading Images <- *I'm here*
 18. Custom Navigation Bar Style
 19. UITableView Custom Footer
 
