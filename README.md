@@ -26,7 +26,7 @@ Topics reviewed:
 19. UITableView Custom Footer
 
 -----
-* **Disclaimer: This project is based on Brian Voong's Tutorial.** 
+**Disclaimer: This project is based on Brian Voong's Tutorial.** 
 His tutorial goes over the Swift language by building a Kindle lookalike app. 
 
 I dive deeper on some features I found interesting. So, if you're following his course and you intend to use this repo expecting similar results - I would suggest not to continue, **as it my code may often vary from the tutorial.**
