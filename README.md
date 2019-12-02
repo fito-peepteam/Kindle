@@ -1,5 +1,5 @@
 # Kindle
-Reviewing a basic Swift tutorial before diving in with SwiftUI.
+Reviewing a Swift tutorial by Brian Voong* before diving in with SwiftUI.
 
 --- 
 
@@ -26,7 +26,9 @@ Topics reviewed:
 19. UITableView Custom Footer
 
 -----
-**Disclaimer: This project is based on Brian Voong's Tutorial - Lets Build that App (LBTA).** 
+* **Disclaimer: This project is based on Brian Voong's Tutorial.** 
 His tutorial goes over the Swift language by building a Kindle lookalike app. 
 
 I dive deeper on some features I found interesting. So, if you're following his course and you intend to use this repo expecting similar results - I would suggest not to continue, **as it my code may often vary from the tutorial.**
+
+Brian has plenty of great tutorials on his website https://www.letsbuildthatapp.com
