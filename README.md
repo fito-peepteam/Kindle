@@ -26,5 +26,7 @@ Topics reviewed:
 19. UITableView Custom Footer
 
 -----
-Tutorial is by Brian Voong - Lets Build that App (LBTA), and goes over the Kindle interface using the Swift Language and Xcode.
-The code in this repo might vary from the tutorial. I'm adding some stuff to take it a little deeper on some aspects as I go.
+**Disclaimer: This project is based on Brian Voong's Tutorial - Lets Build that App (LBTA).** 
+His tutorial goes over the Swift language by building a Kindle lookalike app. 
+
+I dive deeper on some features I found interesting. So, if you're following his course and you expect similar results, do not use the code in this repo. **As it may vary from the tutorial**
