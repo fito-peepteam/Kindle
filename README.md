@@ -28,6 +28,7 @@ Topics reviewed:
 -----
 **Disclaimer: This project is based on Brian Voong's Tutorial.** 
 
-I dive deeper on some features I found interesting. So, if you're following his course and you intend to use this repo expecting similar results: I would suggest you otherwise. **This code often differs from the one on his tutorial.**
+**This code may differ from his tutorial.** 
+I dive deeper on some features I found interesting. So, if you're following his course and you intend to use this repo expecting similar results: I would suggest you otherwise. 
 
 Brian has plenty of great tutorials on his website https://www.letsbuildthatapp.com
