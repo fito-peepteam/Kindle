@@ -1,5 +1,5 @@
 # Kindle
-Reviewing a basic Swift tutorial before diving in with SwiftUI.
+Reviewing basic Swift concepts by building a Kindle lookalike app.
 
 --- 
 
@@ -14,17 +14,21 @@ Topics reviewed:
 7. Adding Subviews Using Frames
 8. Auto Layout
 9. MVC and Encapsulation
-10. Presenting UICollectionViewController <- *I'm here*
+10. Presenting UICollectionViewController 
 11. Transform Cells to Pages
 12. Custom Page Cells
 13. Render Book Pages
 14. URLSession JSON Fetch
 15. JSONSerialization Books List
 16. Custom Book Constructor
-17. Loading Images
+17. Loading Images <- *I'm here*
 18. Custom Navigation Bar Style
 19. UITableView Custom Footer
 
 -----
-Tutorial is by Brian Voong - Lets Build that App (LBTA), and goes over the Kindle interface using the Swift Language and Xcode.
-The code in this repo might vary from the tutorial. I'm adding some stuff to take it a little deeper on some aspects as I go.
+**Disclaimer: This project is based on a tutorial by Brian Voong.** 
+
+**This code may differ from his tutorial.** 
+I dive deeper on some features I found interesting. For this reason, if you're following Brian's course, and you intend to use this repo expecting similar results: I would suggest you otherwise. After all, the best way to learn is to do it yourself!
+
+Brian has plenty of great tutorials on his website https://www.letsbuildthatapp.com
