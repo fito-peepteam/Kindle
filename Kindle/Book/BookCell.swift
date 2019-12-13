@@ -23,14 +23,15 @@ class BookCell: UITableViewCell {
             self.coverImageView.image = nil
             
             URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error {
-                    return
-                }
-                guard let imageData = data else { return }
-                let image = UIImage(data: imageData)
-                
-                DispatchQueue.main.async {
-                    self.coverImageView.image = image
+                if error != nil {
+                    print(error?.localizedDescription ?? "Book URL Task failed but couldn't retrieve a localized description.")
+                } else{
+                    guard let imageData = data else { return }
+                    let image = UIImage(data: imageData)
+                    
+                    DispatchQueue.main.async {
+                        self.coverImageView.image = image
+                    }
                 }
             }.resume()
         }

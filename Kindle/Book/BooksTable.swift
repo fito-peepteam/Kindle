@@ -102,7 +102,7 @@ class BooksTable: UITableViewController {
             
             present(pagesCollectionVC, animated: true, completion: nil)
             
-            tableView.deselectRow(at: indexPath, animated: false) // so the cell stays clear            
+            tableView.deselectRow(at: indexPath, animated: true) // so the cell stays clear            
         }
 
     }
